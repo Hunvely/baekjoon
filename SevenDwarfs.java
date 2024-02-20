@@ -9,34 +9,36 @@ public class SevenDwarfs {
 
         Scanner input = new Scanner(System.in);
 
-        int[] arr = new int[9];
+        int dwarfs[] = new int[9];
         int sum = 0;
-        int temp = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            arr[i] = input.nextInt();
-            sum += arr[i];
+        for (int i = 0; i < dwarfs.length; i++) {
+            dwarfs[i] = input.nextInt();
+            sum += dwarfs[i];
         }
 
-        int a = 0;
-        int b = 0;
+        // 거짓말 한 dwarf 2명을 찾기 위해 선언 후 초기화
+        int liar1 = 0;
+        int liar2 = 0;
 
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = i + 1; j < arr.length; j++) {
+        for (int i = 0; i < dwarfs.length; i++) {
+            for (int j = i + 1; j < dwarfs.length; j++) {
 
-                Arrays.sort(arr);
+                // dwarfs 배열 정렬
+                Arrays.sort(dwarfs);
 
-                if (sum - arr[i] - arr[j] == 100) {
-                    a = i;
-                    b = j;
-                    break;
+                // 일곱 난쟁이의 키의 합이 100이므로 dwarfs[] 인덱스 값들 중 liar 값 찾기
+                if (sum - dwarfs[i] - dwarfs[j] == 100) {
+                    liar1 = dwarfs[i];
+                    liar2 = dwarfs[j];
                 }
             }
         }
 
-        for (int i = 0; i < arr.length; i++) {
-            if (arr[i] != arr[a] && arr[i] != arr[b]) {
-                System.out.print(arr[i] + " ");
+        // 일곱 난쟁이 값 출력
+        for (int i = 0; i < dwarfs.length; i++) {
+            if (dwarfs[i] != liar1 && dwarfs[i] != liar2) {
+                System.out.print(dwarfs[i] + " ");
             }
         }
     }
