@@ -2,6 +2,7 @@ package baekjoon.bronze;
 
 import java.util.Scanner;
 
+// Level : Bronze5
 public class Chess {
 
     public static void main(String[] args) {
