@@ -3,6 +3,7 @@ package baekjoon.bronze;
 import java.util.Arrays;
 import java.util.Scanner;
 
+// Level : Bronze1
 public class SevenDwarfs {
 
     public static void main(String[] args) {
